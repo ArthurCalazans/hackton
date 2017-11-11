@@ -12,7 +12,13 @@
                 data: formData,
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);                    
+                    if (data.return) {
+                        alert(data.mensagem);
+                        window.location = "/hackton/rally/?page=login";
+                    } else {
+                        alert(data.mensagem);
+                        $(this).reset();
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log('ERRORS: ' + textStatus);
