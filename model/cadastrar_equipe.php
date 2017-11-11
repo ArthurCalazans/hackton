@@ -12,7 +12,7 @@ if (is_numeric($_POST['ra_lider']) and is_numeric($_POST['ra1']) and is_numeric(
         $insert['aluno'] = "INSERT INTO cad_aluno SET ";
         $insert['aluno'] .= "nome = '" . $_POST['nome_lider'] . "',";
         $insert['aluno'] .= "ra = '" . $_POST['ra_lider'] . "',";
-        $insert['aluno'] .= "senha = '" . $_POST['password'] . "',";
+        $insert['aluno'] .= "senha = '" . sha1($_POST['password']) . "',";
         $insert['aluno'] .= "lider = '1',";
         $insert['aluno'] .= "id_equipe = '" . $id_equipe . "'";
 

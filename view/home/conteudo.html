@@ -1,6 +1,9 @@
-<?php include $root.'/view/common/header.html' ?>
+<?php include $root.'/view/common/header.html'; ?>
 <body>
-    <?php include $root.'/view/prova/perguntas.html' ?>
-    <?php include $root.'/view/home/cadastro.html' ?>
-    <?php include $root.'/view/common/bottom.html' ?>
+    <?php if(isset($_SESSION['ID_ALUNO'])){
+    include $root.'/view/common/temporizador.html';
+    }else{ 
+    include $root.'/view/home/cadastro.html'; 
+    include $root.'/view/common/bottom.html';
+    } ?>
 </body>
