@@ -1,2 +1,3 @@
-<?php
-include $root.'/view/cadastro/formulario.html';
+<html>
+<?php include $root.'/view/cadastro/conteudo.html'; ?>
+</html>
