@@ -1,66 +1,73 @@
 <div class='container'>
     <div class="row">
+        <h4><i>Cadastre-se</i></h4>
         <form class="col s12">
             <div class="row">
                 <div class="col s12">
                     Preencha os campos a seguir
                 </div>
                 <div class="input-field col s12">
-                    <input id="nome_equipe" type="text" class="validate">
+                    <input id="nome_equipe" type="text" name="nome_equipe" class="validate">
                     <label for="nome_equipe">Nome da equipe</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="nome_lider" type="text" class="validate">
+                    <input id="nome_lider" type="text" name="nome_lider" class="validate">
                     <label for="nome_lider">Nome do Líder</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ra_lider" type="phone" class="validate">
+                    <input id="ra_lider" type="phone" name="ra_lider" class="validate">
                     <label for="ra_lider">RA do Líder</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
+                    <input id="password" type="password" name="password" class="validate">
                     <label for="password">Senha para login</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="nome1" type="text" class="validate">
+                    <input id="nome1" type="text" name="nome1" class="validate">
                     <label for="nome1">Nome membro 1</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ra1" type="phone" class="validate">
+                    <input id="ra1" type="phone" name="ra1" class="validate">
                     <label for="ra1">RA membro 1</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="nome2" type="text" class="validate">
+                    <input id="nome2" type="text" name="nome2" class="validate">
                     <label for="nome2">Nome membro 2</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="ra2" type="phone" class="validate">
+                    <input id="ra2" type="phone" name="ra2" class="validate">
                     <label for="ra2">RA membro 2</label>
                 </div>
             </div>
             <div class="col s12">
-                <p>
-                    <input name="group1" type="radio" id="equipeCarac" />
-                    <label for="equipeCarac">Sim</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="equipeNCarac" />
-                    <label for="equipeNCarac">Não</label>
-                </p>
+            <p>Equipe caracterizada</p>
+                 <!-- Switch -->
+  <div class="switch">
+    <label>
+      Não
+      <input type="checkbox">
+      <span class="lever"></span>
+      Sim
+    </label>
+  </div>
+
             </div>
-            <button type="submit" class="waves-effect waves-light btn">Teste</button>
+            <br>
+            <div class="col s12" style="padding-top: 30px;">
+            <button type="submit" class="waves-effect waves-light btn <i class="material-icons right">Enviar</i></button>
+            </div>
         </form>
     </div>
 </div>
