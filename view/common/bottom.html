@@ -3,6 +3,25 @@
 <script type="text/javascript" src="/hackton/rally/assets/js/init.js"></script>
 <script>
     $(document).ready(function () {
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var formData = $(this).serializeArray();
+            $.ajax({
+                url: '/hackton/rally/model/cadastrar_equipe.php',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);                    
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('ERRORS: ' + textStatus);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
         $('.parallax').parallax();
     });
 </script>
