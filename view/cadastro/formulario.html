@@ -1,18 +1,108 @@
 <div class="container">
-    <form>
-        <h1>Preencha os campos a seguir</h1>
-        <input type='text' id='nomeEquipe' class='nomeEquipe' placeholder='Nome da equipe'>
-        <input type='text' id='nomeLider' class='nomeLider' placeholder='Nome do Líder'>
-        <input type='phone' id='raLider' class='raLider' placeholder='RA do Líder'>
-        <input type='password' id='senha' class='senha' placeholder='Senha para login'><br>
+    <div class="row">
 
-        <input type='text' id='nome1' name='nome1' placeholder='Nome membro 1'>
-        <input type='phone' id='ra1' name='ra1' placeholder='RA membro 1'><br>
-        <input type='text' id='nome2' name='nome2' placeholder='Nome membro 2'>
-        <input type='phone' id='ra2' name='ra2' placeholder='RA membro 2'><br>
+        <form>
+            <h1>Preencha os campos a seguir</h1>
+            <div class="col s12">            
+                <input type='text' id='nomeEquipe' name='nomeEquipe' placeholder='Nome da equipe'>
+            </div>
+            <div class="col s12">            
+                <input type='text' id='nomeLider' name='nomeLider' placeholder='Nome do Líder'>
+            </div>
+            <div class="col s12">
+                <input type='phone' id='raLider' name='raLider' placeholder='RA do Líder'>
+            </div>
+            <div class="col s12">
+                <input type='password' id='senha' name='senha' placeholder='Senha para login'>
+            </div>
+            <div class="col s12">
+                <input type='text' id='nome1' name='nome1' placeholder='Nome membro 1'>
+            </div>
+            <div class="col s12">
+                <input type='phone' id='ra1' name='ra1' placeholder='RA membro 1'>
+            </div>
+            <div class="col s12">
+                <input type='text' id='nome2' name='nome2' placeholder='Nome membro 2'>
+            </div>
+            <div class="col s12">
+                <input type='phone' id='ra2'name='ra2' placeholder='RA membro 2'>
+            </div>
 
-        <p>Equipe Caracterizada</p>
-        <input type='radio' id='equipeCarac'>Sim<br>
-        <input type='radio' id='equipeNCarac'>Não<br>
-    </form>
+            <div class="col s12">
+                <label>Equipe Caracterizada</label>
+                <input type='radio' id='equipeCarac' name='equipe' value='1'>Sim<br>
+                <input type='radio' id='equipeCarac' name='equipe' value='0'>Não<br>
+            </div>
+
+            <button type="submit" class="waves-effect waves-light btn"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+
+        </form>
+    </div>
+</div>
+<div class='container'>
+
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    Preencha os campos a seguir
+                </div>
+                <div class="input-field col s12">
+                    <input id="nome_equipe" type="text" class="validate">
+                    <label for="nome_equipe">Nome da equipe</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="nome_lider" type="text" class="validate">
+                    <label for="nome_lider">Nome do Líder</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="ra_lider" type="phone" class="validate">
+                    <label for="ra_lider">RA do Líder</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Senha para login</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="nome1" type="text" class="validate">
+                    <label for="nome1">Nome membro 1</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="ra1" type="phone" class="validate">
+                    <label for="ra1">RA membro 1</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="nome2" type="text" class="validate">
+                    <label for="nome2">Nome membro 2</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="ra2" type="phone" class="validate">
+                    <label for="ra2">RA membro 2</label>
+                </div>
+            </div>
+            <div class="col s12">
+                <p>
+                    <input name="group1" type="radio" id="equipeCarac" />
+                    <label for="equipeCarac">Sim</label>
+                </p>
+                <p>
+                    <input name="group1" type="radio" id="equipeNCarac" />
+                    <label for="equipeNCarac">Não</label>
+                </p>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        </form>
+    </div>
 </div>
