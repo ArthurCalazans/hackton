@@ -1,123 +1,28 @@
+<?php 
+    include $_SERVER['DOCUMENT_ROOT'].'/hackton/rally/config.php'; 
+    $mysqli->set_charset('utf8');
+    $select = "select * from perguntas p inner join respostas r on (r.id_pergunta = p.id_perguntas) order by id_perguntas asc";
+    $result = $mysqli->query($select);
+    while($consulta = $result->fetch_object()){
+        $pergunta[$consulta->id_perguntas] = $consulta->pergunta;
+        $resposta[$consulta->id_perguntas][] = $consulta->alternativa;
+        $value[$consulta->id_perguntas][] = $consulta->id_resposta;
+    }        
+?>
 <div class="container">
     <form action="#">
-        <h3>Questão 1:</h3>
-        <i class="material-icons">Com relação a conceitos sobre sistemas distribuídos, assinale a opção correta</i>
-           
-        <p>
-            <input name="group1" type="radio" id="test1" />
-            <label for="test1"> a) Em um sistema distribuído, os usuários podem acessar recursos em outras máquinas, mas um sistema operacional distribuído não tem como tornar a distribuição dos recursos transparente aos usuários.</label>
-        </p>
-        <p>
-            <input name="group1" type="radio" id="test1" />
-            <label for="test1">b) Um sistema distribuído tem que ser tolerante a falhas. Para ser considerado tolerante a falhas, tem que continuar a funcionar, sem degradação do desempenho ou das funcionalidades, após as falhas.</label>
-                </p>
+        <?php for($i=1;$i<=count($pergunta);$i++){ ?>
+            <h3>Questão <?php echo $i ?>:</h3>
+            <p style="color:#000"><i class="material-icons"></i><?php echo $pergunta[$i] ?></p>
+            <?php for($j=0;$j<count($resposta[$i]);$j++){ ?>
                 <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">c) Um sistema de arquivos distribuídos pode ser implementado sem manter informações de estado. Nesse caso, as operações são tratadas individualmente e não como partes de uma sessão.</label>
+                    <input name="group<?php echo $i; ?>" type="radio" id="test<?php echo $i.$j; ?>" value="<?php echo $value[$i][$j]; ?> "/>
+                    <label for="test<?php echo $i.$j; ?>"> <?php echo $resposta[$i][$j]; ?></label>
                 </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">d) Um sistema distribuído pode suportar a migração de processos. A migração de processos não pode, entretanto, ocorrer sob controle de um sistema operacional, tem que ser controlada por aplicações.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">e) Nenhum.</label>
-                </p>
-
-
-            
-            <div class="collapsible-header">
-            <h3>Questão 2:</h3>
-        </div>
-            <i class="material-icons">Em Álgebra Relacional,</i>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> a) a operação argumento é unária e retorna uma relação de argumento, com certos atributos omitidos.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> b) a operação produto cartesiano permite combinar informações de quaisquer duas relações.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> c) a operação projeção é múltipla e retorna uma relação de argumento, com todos os atributos.
-</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> d) a operação associação cartesiana permite combinar informações de quaisquer dois atributos.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">e) a operação link é unária e retorna um produto de argumentos, com certos atributos omitidos.</label>
-                </p>
-
-
-            
-            <div class="collapsible-header">
-            <h3>Questão 3:</h3>
-            <i class="material-icons">O sistema computacional (SC) é um </i>
-            
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">
-programa (software) que processa dados de acordo com um dispositivo eletrônico (hardware). </label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> b)
-conjunto de dispositivos eletrônicos (hardware) capaz de processar dados de acordo com um programa (software). 
-</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">c)
-computador de baixo custo, que se destina ao uso individual ou por um pequeno grupo de pessoas. 
-</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">d)
-computador pequeno que permite o acesso de diversos usuários, simultaneamente.
- </label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">e)
-assistente digital pessoal utilizado em tarefas mais simples. 
-</label>
-                </p>
-
-
-            <div class="collapsible-header">
-            <h3>Questão 4:</h3>
-            <i class="material-icons">No contexto dos compiladores, os scanners são responsáveis por executar a</i>
-            <form action="#">
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">a) análise léxica.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">b) análise sintática.
-</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">c) análise semântica.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">d) otimização do código fonte.</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1"> e) tradução do programa fonte no programa objeto.</label>
-                </p>
-
-            <button class="btn waves-effect waves-light" type="submit" name="action"> 
-    <i class="material-icons right">Enviar</i>
-  </button>
-        
+            <?php } ?>
+        <?php } ?>
+        <button class="btn waves-effect waves-light" type="submit" name="action"> 
+            <i class="material-icons right">send</i>Enviar
+        </button>
     </form>
 </div>
