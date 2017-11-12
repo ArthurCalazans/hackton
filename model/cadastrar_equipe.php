@@ -5,14 +5,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
 if (is_numeric($_POST['ra_lider']) and is_numeric($_POST['ra1']) and is_numeric($_POST['ra2'])) {
 
     $insert['equipe'] = "INSERT INTO cad_equipe SET ";
-    $insert['equipe'] .= "equipe = '" . $_POST['nome_equipe'] . "'";
+    $insert['equipe'] .= "equipe = '" . $_POST['nome_equipe'] . "',";
+    $insert['equipe'] .= "agrupamento = '0'";
     $result = $mysqli->query($insert['equipe']);
     if ($result) {
         $id_equipe = $mysqli->insert_id;
         $insert['aluno'] = "INSERT INTO cad_aluno SET ";
         $insert['aluno'] .= "nome = '" . $_POST['nome_lider'] . "',";
         $insert['aluno'] .= "ra = '" . $_POST['ra_lider'] . "',";
-        $insert['aluno'] .= "email = '" . $_POST['email'] . "',";
+        //$insert['aluno'] .= "email = '" . $_POST['email'] . "',";
         $insert['aluno'] .= "senha = '" . sha1($_POST['password']) . "',";
         $insert['aluno'] .= "lider = '1',";
         $insert['aluno'] .= "id_equipe = '" . $id_equipe . "'";
