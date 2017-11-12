@@ -19,7 +19,7 @@
     <div class="center-align">
     <?php if (!$_SESSION['CHECKIN']){?>
         <h5>Abra o aplicativo QR Code e faça o seu check-in</h5>
-        <?php }elseif($_SESSION['FASE1']){ 
+        <?php }elseif($_SESSION['FASE1']){
             include $root.'/view/common/fase1.html';
         }elseif($_SESSION['FASE2']){ 
             include $root.'/view/common/fase2.html';
