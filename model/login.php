@@ -27,6 +27,7 @@ if ($result->num_rows > 0) {
     $_SESSION['DTAHORA'] = date('d/m/Y H:i:s');
     $_SESSION['IP'] = $_SERVER['REMOTE_ADDR'];
     $_SESSION['LOGIN'] = true;
+    $_SESSION['CHECKIN'] = false;
 
     $return = ['return' => true, 'mensagem' => "Seja bem vindo ao rally"];
 } else {
