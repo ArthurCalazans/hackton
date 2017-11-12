@@ -1,25 +1,14 @@
-<?php 
-    include $_SERVER['DOCUMENT_ROOT'].'/hackton/rally/config.php'; 
-    $mysqli->set_charset('utf8');
-    $select = "select * from perguntas p inner join respostas r on (r.id_pergunta = p.id_perguntas) order by id_perguntas asc";
-    $result = $mysqli->query($select);
-    while($consulta = $result->fetch_object()){
-        $pergunta[$consulta->id_perguntas] = $consulta->pergunta;
-        $resposta[$consulta->id_perguntas][] = $consulta->alternativa;
-        $value[$consulta->id_perguntas][] = $consulta->id_resposta;
-    }        
-?>
 <div class="container">
     <form action="#">
-        <?php for($i=1;$i<=count($pergunta);$i++){ ?>
-            <h3>Questão <?php echo $i ?>:</h3>
-            <p style="color:#000"><i class="material-icons"></i><?php echo $pergunta[$i] ?></p>
-            <?php for($j=0;$j<count($resposta[$i]);$j++){ ?>
-                <p>
-                    <input name="group<?php echo $i; ?>" type="radio" id="test<?php echo $i.$j; ?>" value="<?php echo $value[$i][$j]; ?> "/>
-                    <label for="test<?php echo $i.$j; ?>"> <?php echo $resposta[$i][$j]; ?></label>
-                </p>
-            <?php } ?>
+        <?php for($i=$de;$i<=$ate;$i++){ ?>
+        <h3>Questão <?php echo $i ?>:</h3>
+        <p style="color:#000"><i class="material-icons"></i><?php echo $pergunta[$i] ?></p>
+        <?php for($j=0;$j<count($resposta[$i]);$j++){ ?>
+        <p>
+            <input name="group<?php echo $i; ?>" type="radio" id="test<?php echo $i.$j; ?>" value="<?php echo $value[$i][$j]; ?> "/>
+            <label for="test<?php echo $i.$j; ?>"> <?php echo $resposta[$i][$j]; ?></label>
+        </p>
+        <?php } ?>
         <?php } ?>
         <button class="btn waves-effect waves-light" type="submit" name="action"> 
             <i class="material-icons right">send</i>Enviar

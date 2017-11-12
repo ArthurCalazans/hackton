@@ -13,14 +13,16 @@ if ($result) {
     } else {
         $agrupamento = $consulta->agrupamento;
     }
-    if ($consulta->inicio > 5) {
+    if ($consulta->inicio == 5) {
         $inicio = 1;
     } else {
         $inicio = $consulta->inicio + 1;
     }
-
+    
     $_SESSION['AGRUPAMENTO'] = $agrupamento;
-    $mysqli->query("UPDATE cad_equipe "
+    /*var_dump("UPDATE cad_equipe "
             . "SET agrupamento = '" . $agrupamento . "', inicio = '" . $inicio . "' "
-            . "WHERE id_equipe = '" . $_SESSION['ID_ALUNO'] . "';");
+            . "WHERE id_equipe = '" . $_SESSION['ID_EQUIPE'] . "';");
+     * 
+     */
 }
