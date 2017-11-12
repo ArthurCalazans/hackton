@@ -1,12 +1,12 @@
 <div class="container">
-    <form action="#">
+    <form id="formPerguntas">
         <?php for($i=$de;$i<=$ate;$i++){ ?>
         <h3>Questão <?php echo $i ?>:</h3>
         <p style="color:#000"><i class="material-icons"></i><?php echo $pergunta[$i] ?></p>
         <?php for($j=0;$j<count($resposta[$i]);$j++){ ?>
         <p >
-            <input name="group<?php echo $i; ?>" type="radio" id="test<?php echo $i.$j; ?>" value="<?php echo $value[$i][$j]; ?> "/>
-            <label style="height: auto" for="test<?php echo $i.$j; ?>"> <?php echo $resposta[$i][$j]; ?></label>
+            <input name="group<?php echo $i; ?>" type="radio" id="test<?php echo $value[$i][$j]; ?>" value="<?php echo $value[$i][$j]; ?> "/>
+            <label style="height: auto" for="test<?php echo $value[$i][$j]; ?>"> <?php echo $resposta[$i][$j]; ?></label>
         </p>
         <?php } ?>
         <?php } ?>
