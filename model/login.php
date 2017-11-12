@@ -19,10 +19,7 @@ if ($result->num_rows > 0) {
     if (isset($coluna->agrupamento) and ( $coluna->agrupamento > 0)) {
         $_SESSION['AGRUPAMENTO'] = $coluna->agrupamento;
     } else {
-        include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/model/agrupamento.php';
-        $_SESSION['AGRUPAMENTO'] = $agrupamento;
-        $mysqli->query("UPDATE cad_equipe SET agrupamento = '" . $agrupamento . "' "
-                . "WHERE id_equipe = '" . $coluna->id_aluno . "';");
+        include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/model/agrupamento.php';        
     }
     $_SESSION['DTAHORA'] = date('d/m/Y H:i:s');
     $_SESSION['IP'] = $_SERVER['REMOTE_ADDR'];

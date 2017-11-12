@@ -2,16 +2,25 @@
 
 include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
 
-$select = "SELECT *, max(agrupamento) as m FROM cad_equipe ORDER BY id_equipe desc limit 1";
+$select = "SELECT * FROM cad_equipe order by id_equipe desc limit 1";
 
 $result = $mysqli->query($select);
 
-
 if ($result) {
     $consulta = $result->fetch_object();
-    if (($consulta->equipe % 3) === 0) {
-        $agrupamento = $consulta->m + 1;
+    if (($consulta->agrupamento % 3) === 0) {
+        $agrupamento = $consulta->agrupamento + 1;
     } else {
-        $agrupamento = $consulta->m;
+        $agrupamento = $consulta->agrupamento;
     }
+    if ($consulta->inicio > 5) {
+        $inicio = 1;
+    } else {
+        $inicio = $consulta->inicio + 1;
+    }
+
+    $_SESSION['AGRUPAMENTO'] = $agrupamento;
+    $mysqli->query("UPDATE cad_equipe "
+            . "SET agrupamento = '" . $agrupamento . "', inicio = '" . $inicio . "' "
+            . "WHERE id_equipe = '" . $_SESSION['ID_ALUNO'] . "';");
 }
