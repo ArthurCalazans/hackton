@@ -17,16 +17,38 @@
     </div>
 
     <div class="center-align">
-    <?php if (!$_SESSION['CHECKIN']){?>
+        <?php if (!$_SESSION['CHECKIN']){?>
         <h5>Abra o aplicativo QR Code e faça o seu check-in</h5>
         <?php }elseif($_SESSION['FASE1']){
-            include $root.'/view/common/fase1.html';
+        include $root.'/view/common/fase1.html';
         }elseif($_SESSION['FASE2']){ 
-            include $root.'/view/common/fase2.html';
+        include $root.'/view/common/fase2.html';
         } else{?>
-            <h5>Aguarde o início da prova</h5>
-        <?php }?>
-        
+        <h5>Aguarde o início da prova</h5>
+        <?php }?>        
     </div>
-    
+    <div class="carousel">
+        <?php if($_SESSION['EUA']){ ?>
+        <a class="carousel-item" href="#">
+            <img src="/hackton/rally/assets/img/pais/pais_eua.png">
+        </a>
+        <?php }if($_SESSION['SUICA']){ ?>
+        <a class="carousel-item" href="#">
+            <img src="/hackton/rally/assets/img/pais/pais_suica.png">
+        </a>
+        <?php }if($_SESSION['ALEMANHA']){ ?>
+        <a class="carousel-item" href="#">
+            <img src="/hackton/rally/assets/img/pais/pais_alemanha.png">
+        </a>
+        <?php }elseif($_SESSION['BRASIL']){ ?>
+        <a class="carousel-item" href="#">
+            <img src="/hackton/rally/assets/img/pais/pais_brasil.png">
+        </a>
+        <?php }elseif($_SESSION['AUSTRALIA']){ ?> 
+        <a class="carousel-item" href="#">
+            <img src="/hackton/rally/assets/img/pais/pais_australia.png">
+        </a>
+        <?php } ?>
+    </div>
+
 </div>

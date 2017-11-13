@@ -25,6 +25,11 @@ if ($result->num_rows > 0) {
     $_SESSION['IP'] = $_SERVER['REMOTE_ADDR'];
     $_SESSION['LOGIN'] = true;
     $_SESSION['CHECKIN'] = false;
+    $_SESSION['EUA'] = false;
+    $_SESSION['SUICA'] = false;
+    $_SESSION['ALEMANHA'] = false;
+    $_SESSION['BRASIL'] = false;
+    $_SESSION['AUSTRALIA'] = false;
 
     $return = ['return' => true, 'mensagem' => "Seja bem vindo ao rally"];
 } else {
