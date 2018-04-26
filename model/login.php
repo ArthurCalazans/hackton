@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/config.php';
 
 $select = "SELECT * FROM cad_aluno a "
         . "INNER JOIN cad_equipe e on (a.id_equipe=e.id_equipe) WHERE "
@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     if (isset($coluna->agrupamento) and ( $coluna->agrupamento > 0)) {
         $_SESSION['AGRUPAMENTO'] = $coluna->agrupamento;
     } else {
-        include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/model/agrupamento.php';        
+        include $_SERVER['DOCUMENT_ROOT'] . '/rally/model/agrupamento.php';        
     }
     $_SESSION['DTAHORA'] = date('d/m/Y H:i:s');
     $_SESSION['IP'] = $_SERVER['REMOTE_ADDR'];

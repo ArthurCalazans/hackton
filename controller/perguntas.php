@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/config.php';
 $mysqli->set_charset('utf8');
 if ($_GET['fase1'] == ('EUA')) {
     $fase = 1;
@@ -29,7 +29,7 @@ if ($_GET['fase1'] == ('EUA')) {
     $_SESSION['AUSTRALIA'] = true;
 }
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/model/selecionar_perguntas.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/model/selecionar_perguntas.php';
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/view/prova/perguntas.html';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/view/prova/perguntas.html';
 ?>

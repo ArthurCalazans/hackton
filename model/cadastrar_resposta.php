@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/config.php';
 foreach ($_POST as $a) {
     $resposta[] = $a;
 }

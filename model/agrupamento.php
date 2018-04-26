@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/config.php';
 
 $select = "SELECT * FROM cad_equipe order by id_equipe desc limit 1";
 

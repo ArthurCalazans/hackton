@@ -1,20 +1,20 @@
-<script type="text/javascript" src="/hackton/rally/assets/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/hackton/rally/assets/js/materialize.js"></script>
-<script type="text/javascript" src="/hackton/rally/assets/js/init.js"></script>
+<script type="text/javascript" src="/rally/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/rally/assets/js/materialize.js"></script>
+<script type="text/javascript" src="/rally/assets/js/init.js"></script>
 <script>
     $(document).ready(function () {
         $('#formCadastro').submit(function (e) {
             e.preventDefault();
             var formData = $(this).serializeArray();
             $.ajax({
-                url: '/hackton/rally/model/cadastrar_equipe.php',
+                url: '/rally/model/cadastrar_equipe.php',
                 type: 'POST',
                 data: formData,
                 dataType: 'json',
                 success: function (data) {
                     if (data.return) {
                         alert(data.mensagem);
-                        window.location = "/hackton/rally/?page=login";
+                        window.location = "/rally/index.php?page=login";
                     } else {
                         alert(data.mensagem);
                         $(this).reset();
@@ -29,14 +29,14 @@
             e.preventDefault();
             var formData = $(this).serializeArray();
             $.ajax({
-                url: '/hackton/rally/model/login.php',
+                url: '/rally/model/login.php',
                 type: 'POST',
                 data: formData,
                 dataType: 'json',
                 success: function (data) {
                     if (data.return) {
                         alert(data.mensagem);
-                        window.location = "/hackton/rally/";
+                        window.location = "/rally/index.php";
                     } else {
                         alert(data.mensagem);
                     }
@@ -51,14 +51,14 @@
         e.preventDefault();
         var formData = $(this).serializeArray();
         $.ajax({
-            url: '/hackton/rally/model/cadastrar_resposta.php',
+            url: '/rally/model/cadastrar_resposta.php',
             type: 'POST',
             data: formData,
             dataType: 'json',
             success: function (data) {
                 if (data.return) {
                     alert(data.mensagem);
-                    window.location = "/hackton/rally/?page=pais";
+                    window.location = "/rally/index.php?page=pais";
                 } else {
                     alert(data.mensagem);
                 }

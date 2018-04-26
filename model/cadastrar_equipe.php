@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally/config.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/rally/config.php';
 
 if (is_numeric($_POST['ra_lider']) and is_numeric($_POST['ra1']) and is_numeric($_POST['ra2'])) {
 

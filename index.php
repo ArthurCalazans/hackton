@@ -1,6 +1,6 @@
 <?php
 
-$root = $_SERVER['DOCUMENT_ROOT'] . '/hackton/rally';
+$root = $_SERVER['DOCUMENT_ROOT'] . '/rally/';
 session_start();
 
 if (isset($_GET['page'])) {
